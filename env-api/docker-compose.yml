@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  api:
+    build: .
+    ports:
+      - "4000:3000"
+    # environment:
+    #   - PORT=3000
+    #   - API_KEY=uniquewow
+    #   - DB_HOST=postgress123unizue
+    #   - NODE_ENV=production-machina
+    env_file:
+      - .env
+
+secrets:
+  api_key:
+    file: ./secrets/api_key.txt
